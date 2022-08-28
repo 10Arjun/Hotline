@@ -7,16 +7,17 @@ import java.lang.*;
 
 class Hotline {
 
-    static void ASCIIConvert(String str) {
+    static String ASCIIConvert(String str) {
         int l = str.length();
         int convertASCII = 0;
         char[] ch = str.toCharArray();
         String newStr = "";
         for (int i = 0; i < 7; i++) {
             convertASCII = str.charAt(i);
-            System.out.print(convertASCII);
+            String s = Integer.toString(convertASCII);
             newStr += ch[i];
         }
+        return newStr;
     }
 
 
@@ -40,10 +41,12 @@ class Hotline {
 
             }
             String str = Conversion;
-            System.out.print("ASCII Sentence: 1-800-");
-            ASCIIConvert(Conversion);
-            String Part1 = Conversion.substring
-            System.out.println();
+
+            String Output1 = ASCIIConvert(Conversion);
+
+            String Part1 = Conversion.substring(0,6);
+            String Part2 = Conversion.substring(6);
+            System.out.print("ASCII Sentence: 1-800-" +Part1 +'-' +Part2);
         }
     }
 }
